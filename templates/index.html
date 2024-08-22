@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display:ital@0;1&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&display=swap" rel="stylesheet">
+    <title>Porositas Batu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#parameter">Parameter</a>
+                <a href="#kalkulator">Kalkulator Batuan Digital</a>
+                <a href="#kontak">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="container home">
+            <div class="home-content">
+                <h1>Neogenesis Web</h1>
+                <p>Selamat datang di website kami. Website ini mengintegrasikan teknologi terbaru dalam fisika bumi untuk analisis porositas batuan. Dengan metode Lattice Boltzmann, kami menyediakan solusi akurat dan interaktif untuk menghitung parameter batuan digital 2D.</p>
+                <div class="buttons">
+                    <a href="#kalkulator" class="btn btn-primary">Mulai</a>
+                    <a href="#parameter" class="btn btn-secondary">Pelajari</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="parameter" class="container parameter">
+            <h2>Parameter</h2>
+            <p>Informasi parameter akan ditampilkan di sini.</p>
+        </section>
+        
+        <section id="kalkulator" class="container kalkulator">
+            <h1>Kalkulator Perhitungan Parameter Batuan Digital</h1>
+            <form action="" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".zip" required>
+                <input type="submit" value="Unggah">
+            </form>
+            <p class="porosity-table-text">Tabel Porositas</p> <!-- Added text here -->
+            {% if tables %}
+                <h2>Hasil Perhitungan Porositas</h2>
+                {% for table in tables %}
+                    {{ table|safe }}
+                {% endfor %}
+            {% endif %}
+        </section>
+        
+
+    </main>
+
+    <section id="kontak">
+        <div class="section-container">
+            <h2>Kontak</h2>
+            <div class="contact-boxes">
+                <div class="contact-box">
+                    <div class="contact-image">
+                        <img src="{{ url_for('static', filename='b.jpg') }}" alt="Benedicta Loveni">
+                        <div class="overlay">
+                            <a href="https://www.instagram.com/benedictalovenim?igsh=MW1uNGU1N2NoZm9xcw==" target="_blank" class="social-icon instagram">
+                                <img src="{{ url_for('static', filename='insta.png') }}" alt="Instagram">
+                            </a>
+                            <a href="https://id.linkedin.com/in/benedictalovenim" target="_blank" class="social-icon linkedin">
+                                <img src="{{ url_for('static', filename='linked.png') }}" alt="LinkedIn">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Benedicta Loveni Melkisedek</h3>
+                        <p>Geofisika Universitas Padjadjaran</p>
+                    </div>
+                </div>
+                <div class="contact-box">
+                    <div class="contact-image">
+                        <img src="{{ url_for('static', filename='vt.png') }}" alt="Yoevita Emeliana">
+                        <div class="overlay">
+                            <a href="https://www.instagram.com/pinemartn?igsh=MW84ZG5seTZzaDliOA==" target="_blank" class="social-icon instagram">
+                                <img src="{{ url_for('static', filename='insta.png') }}" alt="Instagram">
+                            </a>
+                            <a href="https://id.linkedin.com/in/yoevitaemeliana" target="_blank" class="social-icon linkedin">
+                                <img src="{{ url_for('static', filename='linked.png') }}" alt="LinkedIn">
+                            </a>
+                            
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Yoevita Emeliana</h3>
+                        <p>Geofisika Universitas Padjadjaran</p>
+                    </div>
+                </div>
+                <div class="contact-box">
+                    <div class="contact-image">
+                        <img src="{{ url_for('static', filename='vt.png') }}" alt="Maharani Arisandy">
+                        <div class="overlay">
+                            <a href="https://www.instagram.com/rizkygabriels_?igsh=MTQwcTh1M2JxODdqZw==" target="_blank" class="social-icon instagram">
+                                <img src="{{ url_for('static', filename='insta.png') }}" alt="Instagram">
+                            </a>
+                            <a href="https://id.linkedin.com/in/rizky-gabriel-andreastito-manalu-3a72111b8" target="_blank" class="social-icon linkedin">
+                                <img src="{{ url_for('static', filename='linked.png') }}" alt="LinkedIn">
+                            </a>
+                            
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Rizky Gabriel Andreastito Manalu</h3>
+                        <p>Geofisika Universitas Padjadjaran</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <p>Copyright © 2024 Departemen Geofisika FMIPA Universitas Padjadjaran</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

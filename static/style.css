@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display:ital@0;1&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+/* Resetting default margins and paddings */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header .logo {
+    max-height: 50px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Home Section */
+.home {
+    position: relative;
+    color: white;
+    text-align: center;
+    background: url('background-image.jpg') no-repeat center center/cover;
+    height: 250px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0; /* Ensure no margin around the section */
+}
+
+/* Container styles for content alignment */
+.home-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    max-width: 100%;
+    margin: 0; /* Ensure no margin inside the container */
+}
+
+/* Home section heading and paragraph styling */
+.home h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.home p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+.btn-secondary {
+    background-color: #2196F3;
+}
+
+.btn-secondary:hover {
+    background-color: #1e88e5;
+}
+
+/* Section colors */
+.kalkulator {
+    background-color: #e0f7fa;
+    padding: 20px; /* Add padding to ensure content is not flush against edges */
+}
+
+.kalkulator  h1 {
+    text-align: center;
+}
+
+.kalkulator form {
+    margin-bottom: 20px;       /* Space below the form */
+}
+
+.porosity-table-text {
+    font-size: 1em;          /* Font size for the "Tabel Porositas" text */
+    margin-bottom: 20px;       /* Space below the text */
+    color: #333;               /* Text color */
+}
+.parameter {
+    background-color: #ffe0b2;
+    padding: 20px; /* Add padding to ensure content is not flush against edges */
+}
+
+#kontak .section-container {
+    background-color: #3d3d3d;
+    padding: 0;
+}
+
+#kontak h2 {
+    color: #ffffff;
+    padding-top: 40px; /* Sesuaikan nilai ini dengan kebutuhan */
+    text-align: center;
+}
+
+.contact-boxes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+
+.contact-box {
+    position: relative;
+    width: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #D3D3D3;
+    text-align: center;
+}
+
+.contact-image {
+    position: relative;
+}
+
+.contact-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    gap: 10px;
+}
+
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+    border: 2px solid #D3D3D3;
+}
+
+.social-icon img {
+    width: 50%;
+    height: 60%;
+}
+
+.social-icon:hover img {
+    transform: scale(1.1);
+}
+
+.social-icon.instagram:hover img {
+    content: url('insta.png');
+}
+
+.social-icon.linkedin:hover img {
+    content: url('linked.png');
+}
+
+.contact-image:hover .overlay {
+    opacity: 1;
+}
+
+.contact-image:hover img {
+    opacity: 0.3;
+}
+
+.contact-info h3, .contact-info p {
+    color: #ffffff;
+    text-align: center;
+    margin-left: 0;
+    margin-right:0;
+}
+
+.footer {
+    background-color: #ffffff;
+    padding: 2vh 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto; /* Menempel di bawah */
+    width: 100%; /* Lebar penuh */
+    font-size: 0.8em; /* Ukuran font default */
+    height: 20px; /* Tinggi default */
+    
+  }
+
+  .footer p {
+    margin-bottom: 5px; /* Jarak tambahan di bawah teks */
+    color: #3d3d3d
+}
+
+/* Media Queries */
+
+/* Extra Large Devices (Large Desktops) */
+@media (min-width: 1200px) {
+    header .container {
+        flex-direction: row;
+    }
+
+    nav a {
+        margin: 0 20px;
+    }
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    header .container {
+        flex-direction: row;
+    }
+
+    nav a {
+        margin: 0 15px;
+    }
+}
+
+/* Medium Devices (Tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .home-content {
+        max-width: 90%;
+    }
+}
+
+/* Small Devices (Mobile Phones) */
+@media (max-width: 767px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .home h1 {
+        font-size: 2em;
+    }
+
+    .home p {
+        font-size: 1em;
+    }
+    
+    table.data {
+        font-size: 14px;
+    }
+}
