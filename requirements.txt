@@ -1,0 +1,6 @@
+flask
+scipy
+opencv-python
+matplotlib==3.7.1
+scikit-image==0.21.0
+numpy==1.24.3
