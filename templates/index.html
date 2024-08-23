@@ -37,17 +37,24 @@
             <p>Informasi parameter akan ditampilkan di sini.</p>
         </section>
         
-        <section id="kalkulator" class="container kalkulator">
+        <section id="kalkulator" class="container">
             <h1>Kalkulator Perhitungan Parameter Batuan Digital</h1>
             <form action="" method="post" enctype="multipart/form-data">
                 <input type="file" name="file" accept=".zip" required>
-                <input type="submit" value="Unggah">
+                <div class="button-container">
+                    <input type="submit" name="calculation_type" value="porosity">
+                    <input type="submit" name="calculation_type" value="pore_size">
+                    <input type="submit" name="calculation_type" value="specific_area">
+                </div>
             </form>
-            <p class="porosity-table-text">Tabel Porositas</p> <!-- Added text here -->
             {% if tables %}
-                <h2>Hasil Perhitungan Porositas</h2>
-                {% for table in tables %}
-                    {{ table|safe }}
+                {% for title, table in tables.items() %}
+                    <h2>{{ title }}</h2>
+                    <div class="tables-container">
+                        <div class="table-section">
+                            {{ table|safe }}
+                        </div>
+                    </div>
                 {% endfor %}
             {% endif %}
         </section>
